@@ -6,25 +6,15 @@ package AbstractFactory;
  * 描述:
  * iphone手机Factory
  */
-public class IphoneFactory extends PhoneFactory {
+public class IphoneFactory implements PhoneFactory {
 
-    private static String SCREEN_NAME = "夏普";
-
-    private static String SYSTEM_NAME = "ios";
-
-    public IphoneFactory() {
-        System.out.println("要生产iphone了");
-        this.screenName = SCREEN_NAME;
-        this.systemName = SYSTEM_NAME;
+    @Override
+    public AbstractPhotoPhone createPhotoPhone() {
+        return new PhotoPhoneIphone();
     }
 
     @Override
-    public PhoneSystem makePhoneSystem() {
-        return super.makePhoneSystem();
-    }
-
-    @Override
-    public PhoneScreen makePhoneScreen() {
-        return super.makePhoneScreen();
+    public AbstractBigScreenPhone createBigScreenPhone() {
+        return new BigScreenIphone();
     }
 }

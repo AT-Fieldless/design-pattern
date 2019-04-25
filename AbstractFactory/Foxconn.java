@@ -11,11 +11,15 @@ public class Foxconn {
     public static void main(String[] args) {
 
         PhoneFactory phoneFactory = new MiPhoneFactory();
-        phoneFactory.makePhoneScreen();
-        phoneFactory.makePhoneSystem();
+        AbstractBigScreenPhone abstractBigScreenPhone = phoneFactory.createBigScreenPhone();
+        AbstractPhotoPhone abstractPhotoPhone = phoneFactory.createPhotoPhone();
+        System.out.println(abstractBigScreenPhone.getScreenName());
+        System.out.println(abstractPhotoPhone.getCameraName());
 
         phoneFactory = new IphoneFactory();
-        phoneFactory.makePhoneScreen();
-        phoneFactory.makePhoneSystem();
+        abstractBigScreenPhone = phoneFactory.createBigScreenPhone();
+        abstractPhotoPhone = phoneFactory.createPhotoPhone();
+        System.out.println(abstractBigScreenPhone.getScreenName());
+        System.out.println(abstractPhotoPhone.getCameraName());
     }
 }
